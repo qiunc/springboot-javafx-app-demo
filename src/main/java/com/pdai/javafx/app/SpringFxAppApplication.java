@@ -21,7 +21,7 @@ public class SpringFxAppApplication extends AbstractFxApplication {
 
     public static void main(String[] args) {
         run(SpringFxAppApplication.class,
-                Arrays.asList(new FxmlView[]{FxmlView.MODULE_DASHBOARD, FxmlView.MODULE_PROFILE, FxmlView.MAIN}),
+                Arrays.asList(FxmlView.MODULE_DASHBOARD, FxmlView.MODULE_PROFILE, FxmlView.MAIN),
                 FxmlView.MAIN, args);
     }
 }

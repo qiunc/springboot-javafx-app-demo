@@ -1,6 +1,7 @@
 package com.pdai.javafx.app.fx;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import com.jfoenix.controls.JFXProgressBar;
 
@@ -24,7 +25,7 @@ public class FxAppPreloader extends Preloader {
 	@Override
 	public void init() {
 		try {
-			view = FXMLLoader.load(getClass().getResource("/template/loader/loader.fxml"));
+			view = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/template/loader/loader.fxml")));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -37,8 +38,8 @@ public class FxAppPreloader extends Preloader {
 		Scene scene = new Scene(view);
 		scene.setFill(Color.TRANSPARENT);
 		scene.getStylesheets().add(getClass().getResource("/styles/theme/fonts.css").toExternalForm());
-		progressBar = (JFXProgressBar) scene.lookup("#progressBar");
-		label = (Label) scene.lookup("#progressLabel");
+		//progressBar = (JFXProgressBar) scene.lookup("#progressBar");
+		//label = (Label) scene.lookup("#progressLabel");
 		primary.getIcons().add(new Image("/icons/icon.png"));
 		primary.setScene(scene);
         primary.setAlwaysOnTop(true);
@@ -52,7 +53,7 @@ public class FxAppPreloader extends Preloader {
 			double x = ((Preloader.ProgressNotification) info).getProgress();
 
 			double percent = x / 100f;
-			progressBar.progressProperty().set(percent > 1 ? 1 : percent);
+			//progressBar.progressProperty().set(percent > 1 ? 1 : percent);
 		}
 	}
 
@@ -62,16 +63,16 @@ public class FxAppPreloader extends Preloader {
 			StateChangeNotification.Type type = info.getType();
 			switch (type) {
 			case BEFORE_LOAD:
-				label.textProperty().set("初始化成功...");
-				Thread.sleep(2000);
+				//label.textProperty().set("初始化成功...");
+				Thread.sleep(1000);
 				break;
 			case BEFORE_INIT:
-				label.textProperty().set("正在加载模块...");
-				Thread.sleep(1000);
+				//label.textProperty().set("正在加载模块...");
+				Thread.sleep(500);
 				break;
 			case BEFORE_START:
-				label.textProperty().set("加载成功，即将跳转到主页面");
-				Thread.sleep(1000);
+				//label.textProperty().set("加载成功，即将跳转到主页面");
+				Thread.sleep(500);
 				stage.close();
 			}
 		} catch (InterruptedException e) {

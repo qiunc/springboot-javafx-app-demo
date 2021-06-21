@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.4.RELEASE</version>
+		<version>2.5.1</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
@@ -25,8 +25,15 @@
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
-		<!-- mvn install:install-file -DgroupId=gn -DartifactId=GNAvatarView -Dversion=v1.0-rc -Dpackaging=jar -Dfile=D:\git\github\springb
-oot-javafx-app-demo\lib\GNAvatarView-1.0-rc.jar
+		<!-- mvn install:install-file -DgroupId=gn -DartifactId=GNCalendar -Dversion=v1.0 -Dpackaging=jar -Dfile=C:\Users\Administrator\IdeaProjects\springboot-javafx-app-demo\lib\GNCalendar-1.0-alpha.jar
+
+mvn install:install-file -DgroupId=gn -DartifactId=GNButton -Dversion=v1.1.0 -Dpackaging=jar -Dfile=C:\Users\Administrator\IdeaProjects\springboot-javafx-app-demo\lib\GNButton-1.1.0.jar
+
+mvn install:install-file -DgroupId=gn -DartifactId=GNCarousel -Dversion=v2.1.5 -Dpackaging=jar -Dfile=C:\Users\Administrator\IdeaProjects\springboot-javafx-app-demo\lib\GNCarousel-2.1.5.jar
+
+mvn install:install-file -DgroupId=gn -DartifactId=GNDecorator -Dversion=v2.1.2-alpha -Dpackaging=jar -Dfile=C:\Users\Administrator\IdeaProjects\springboot-javafx-app-demo\lib\GNDecorator-2.1.2-alpha.jar
+
+mvn install:install-file -DgroupId=gn -DartifactId=GNAvatarView -Dversion=v1.0-rc -Dpackaging=jar -Dfile=C:\Users\Administrator\IdeaProjects\springboot-javafx-app-demo\lib\GNAvatarView-1.0-rc.jar
 -->
 		<dependency>
 			<groupId>gn</groupId>
@@ -90,30 +97,41 @@ oot-javafx-app-demo\lib\GNAvatarView-1.0-rc.jar
 			<artifactId>colors</artifactId>
 			<version>1.4</version>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.25</version>
+		</dependency>
+
+
+
 	</dependencies>
 
 	<build>
 		<plugins>
-<!--			<plugin>-->
-<!--				<groupId>org.springframework.boot</groupId>-->
-<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--			</plugin>-->
+			<!--			<plugin>-->
+			<!--				<groupId>org.springframework.boot</groupId>-->
+			<!--				<artifactId>spring-boot-maven-plugin</artifactId>-->
+			<!--			</plugin>-->
 
-				<plugin>
-					<groupId>com.zenjava</groupId>
-					<artifactId>javafx-maven-plugin</artifactId>
-					<version>8.8.3</version>
-					<configuration>
-						<vendor>pdai</vendor>
-						<mainClass>com.pdai.javafx.app.SpringFxAppApplication</mainClass>
-						<allPermissions>true</allPermissions>
-					</configuration>
-				</plugin>
+			<plugin>
+				<groupId>com.zenjava</groupId>
+				<artifactId>javafx-maven-plugin</artifactId>
+				<version>8.8.3</version>
+				<configuration>
+					<vendor>pdai</vendor>
+					<mainClass>com.pdai.javafx.app.SpringFxAppApplication</mainClass>
+					<allPermissions>true</allPermissions>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 

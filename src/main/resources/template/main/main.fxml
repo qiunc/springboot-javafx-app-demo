@@ -161,7 +161,7 @@
                      <children>
                         <ScrollPane fx:id="body" fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" StackPane.alignment="TOP_LEFT">
                            <content>
-                              <fx:include source="../module/profile.fxml" />
+                              <fx:include source="../module/dashboard.fxml" />
                            </content></ScrollPane>
                      </children>
                   </StackPane>
