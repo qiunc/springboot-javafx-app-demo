@@ -45,8 +45,6 @@
     <orderEntry type="library" name="Maven: com.jfoenix:jfoenix:8.0.7" level="project" />
     <orderEntry type="library" name="Maven: eu.hansolo:tilesfx:1.6.5" level="project" />
     <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" level="project" />
-    <orderEntry type="library" name="Maven: junit:junit:4.13.2" level="project" />
-    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:2.2" level="project" />
     <orderEntry type="library" name="Maven: eu.hansolo:colors:1.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-starter-test:2.5.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-test:2.5.1" level="project" />
@@ -77,6 +75,11 @@
     <orderEntry type="library" scope="TEST" name="Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.3.8" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.8.2" level="project" />
-    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.25" level="project" />
+    <orderEntry type="library" name="Maven: jfree:jfreechart:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: jfree:jcommon:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.13.2" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:2.2" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.bower:echarts:4.7.0" level="project" />
+    <orderEntry type="library" name="Maven: org.webjars.bower:zrender:4.3.0" level="project" />
   </component>
 </module>

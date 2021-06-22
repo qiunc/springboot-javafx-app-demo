@@ -50,7 +50,7 @@ public class AppJavaConfig {
     }
     
     @Bean
-    @Lazy(value = true) //Stage only created after Spring context bootstap
+    @Lazy(value = true) //Stage only created after Spring context bootstrap
     public StageManager stageManager(Stage stage, GNDecorator decorator) throws IOException {
         return new StageManager(springFXMLLoader, stage, decorator);
     }

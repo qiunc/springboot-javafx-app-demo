@@ -25,6 +25,14 @@
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2 -->
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-log4j2</artifactId>-->
+<!--			<version>2.5.1</version>-->
+<!--		</dependency>-->
+
+
 		<!-- mvn install:install-file -DgroupId=gn -DartifactId=GNCalendar -Dversion=v1.0 -Dpackaging=jar -Dfile=C:\Users\Administrator\IdeaProjects\springboot-javafx-app-demo\lib\GNCalendar-1.0-alpha.jar
 
 mvn install:install-file -DgroupId=gn -DartifactId=GNButton -Dversion=v1.1.0 -Dpackaging=jar -Dfile=C:\Users\Administrator\IdeaProjects\springboot-javafx-app-demo\lib\GNButton-1.1.0.jar
@@ -104,14 +112,36 @@ mvn install:install-file -DgroupId=gn -DartifactId=GNAvatarView -Dversion=v1.0-r
 			<scope>test</scope>
 		</dependency>
 
+		<!--数据库相关包-->
 		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+<!--		<dependency>-->
+<!--			<groupId>mysql</groupId>-->
+<!--			<artifactId>mysql-connector-java</artifactId>-->
+<!--			<version>8.0.25</version>-->
+<!--		</dependency>-->
+<!--		&lt;!&ndash; spring-boot整合mybatis &ndash;&gt;-->
+<!--		&lt;!&ndash; https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter &ndash;&gt;-->
+<!--		<dependency>-->
+<!--			<groupId>org.mybatis.spring.boot</groupId>-->
+<!--			<artifactId>mybatis-spring-boot-starter</artifactId>-->
+<!--			<version>2.2.0</version>-->
+<!--		</dependency>-->
+
+
+         <!--图形相关包-->
+		<!-- https://mvnrepository.com/artifact/org.jfree/jfreechart -->
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>8.0.25</version>
+			<groupId>jfreechart</groupId>
+			<artifactId>jfreechart</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 
 
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>echarts</artifactId>
+			<version>4.7.0</version>
+		</dependency>
 
 	</dependencies>
 

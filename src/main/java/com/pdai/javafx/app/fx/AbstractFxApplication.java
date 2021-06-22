@@ -5,6 +5,7 @@ import static com.sun.javafx.application.LauncherImpl.launchApplication;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.function.Supplier;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,8 +61,12 @@ public abstract class AbstractFxApplication extends Application {
 		preloadViews = _preloadViews;
 		initView = _initView;
 
-		CompletableFuture.supplyAsync(() -> applicationContext = SpringApplication.run(appClass, args))
-				.whenComplete((ctx, throwable) -> {
+		CompletableFuture.supplyAsync(new Supplier<ConfigurableApplicationContext>() {
+			@Override
+			public ConfigurableApplicationContext get() {
+				return applicationContext = SpringApplication.run(appClass, args);
+			}
+		}).whenComplete((ctx, throwable) -> {
 					if (throwable != null) {
 						LOGGER.error("Failed to load spring application context: ", throwable);
 					} else {

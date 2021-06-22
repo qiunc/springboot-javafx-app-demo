@@ -26,21 +26,28 @@
 
 <StackPane prefHeight="1500.0" prefWidth="992.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pdai.javafx.app.controller.DashboardController">
    <children>
+
+      <!--整体使用垂直布局-->
       <VBox spacing="20.0">
          <children>
+
+            <!--顶部导航栏-->
             <HBox alignment="CENTER" spacing="20.0">
                <children>
                   <VBox prefHeight="101.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                      <children>
                         <HBox prefHeight="93.0" prefWidth="345.0">
                            <children>
+
                               <HBox alignment="CENTER_LEFT" prefHeight="93.0" prefWidth="271.0">
                                  <children>
+
                                     <JFXButton cache="true" cacheHint="SPEED" contentDisplay="GRAPHIC_ONLY" minHeight="60.0" minWidth="60.0" prefHeight="60.0" prefWidth="60.0" ripplerFill="WHITE" styleClass="btn-primary" text="Button">
                                        <graphic>
                                           <SVGPath content="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" fill="WHITE" />
                                        </graphic>
                                     </JFXButton>
+
                                     <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
                                        <children>
                                           <Label fx:id="lbl_numberRegisters" text="34" textFill="#4986e7">
@@ -55,19 +62,26 @@
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-fill: -text-color;" text="Messages" />
                                        </children>
                                     </VBox>
+
                                  </children>
                                  <padding>
                                     <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                  </padding>
                               </HBox>
+
                            </children>
                         </HBox>
+
                      </children>
+                     <!--绘制细线边框-->
                      <styleClass>
                         <String fx:value="border-1" />
                         <String fx:value="border" />
                      </styleClass>
                   </VBox>
+
+
+
                   <VBox prefHeight="101.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                      <children>
                         <HBox prefHeight="93.0" prefWidth="345.0">
@@ -106,6 +120,9 @@
                         <String fx:value="border-1" />
                      </styleClass>
                   </VBox>
+
+
+                  <!--顶部第3个-->
                   <VBox prefHeight="101.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                      <children>
                         <HBox prefHeight="93.0" prefWidth="345.0">
@@ -144,6 +161,10 @@
                         <String fx:value="border-1" />
                      </styleClass>
                   </VBox>
+
+
+
+                  <!--顶部第4个-->
                   <VBox prefHeight="101.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                      <children>
                         <HBox prefHeight="93.0" prefWidth="345.0">
@@ -182,6 +203,8 @@
                         <String fx:value="border-1" />
                      </styleClass>
                   </VBox>
+
+                  <!--顶部第5个-->
                   <VBox prefHeight="101.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                      <children>
                         <HBox prefHeight="93.0" prefWidth="345.0">
@@ -220,8 +243,18 @@
                         <String fx:value="border-1" />
                      </styleClass>
                   </VBox>
+
                </children>
             </HBox>
+
+
+
+
+
+
+
+
+            <!--绘制曲线-->
             <HBox alignment="CENTER" prefHeight="280.0" prefWidth="972.0">
                <children>
                   <AreaChart fx:id="areaChart" alternativeColumnFillVisible="true" createSymbols="false" horizontalGridLinesVisible="false" prefHeight="299.0" prefWidth="972.0" styleClass="main-chart" title="Sales Year" HBox.hgrow="ALWAYS">
@@ -238,30 +271,50 @@
                   <String fx:value="border-1" />
                </styleClass>
             </HBox>
+
+
+
+
+
+
+
+
+
+            <!--下半部分采用水平-->
             <HBox alignment="CENTER" spacing="20.0" VBox.vgrow="ALWAYS">
                <children>
+                  <!--用于竖直拓展-->
                   <VBox HBox.hgrow="ALWAYS">
                      <children>
+
+                        <!--底部左中-->
                         <HBox prefHeight="268.0" prefWidth="547.0" spacing="20.0" VBox.vgrow="ALWAYS">
                            <children>
+                              <!--底部左边-->
                               <VBox spacing="10.0" HBox.hgrow="ALWAYS">
                                  <children>
+                                    <!--图主题--> <!--饼状图部分-->
                                     <PieChart fx:id="pieChart" title="Pie Chart">
                                        <styleClass>
                                           <String fx:value="border" />
                                           <String fx:value="border-1" />
-                                       </styleClass></PieChart>
+                                       </styleClass>
+                                    </PieChart>
+
+                                    <!--prefile进度条-->
                                     <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
                                        <children>
+
                                           <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="20.0" HBox.hgrow="ALWAYS">
                                              <children>
-                                                <Label styleClass="h4" text="Perfil" />
+                                                <Label styleClass="h4" text="Prefile" />
                                                 <JFXProgressBar progress="0.46" />
                                              </children>
                                              <HBox.margin>
                                                 <Insets left="10.0" />
                                              </HBox.margin>
                                           </VBox>
+
                                        </children>
                                        <styleClass>
                                           <String fx:value="border" />
@@ -269,9 +322,16 @@
                                        </styleClass>
                                        <padding>
                                           <Insets bottom="5.0" left="5.0" top="5.0" />
-                                       </padding></HBox>
+                                       </padding>
+                                       <!--进度条结束-->
+                                    </HBox>
+
+                                 <!--底部左边区域结束-->
                                  </children>
                               </VBox>
+
+
+                              <!--followme区域-->
                               <VBox prefHeight="1058.0" prefWidth="457.0" spacing="10.0" HBox.hgrow="ALWAYS">
                                  <children>
                                     <VBox alignment="CENTER" maxHeight="-Infinity" prefHeight="219.0" prefWidth="303.0" spacing="10.0">
@@ -289,19 +349,30 @@
                                     </VBox>
                                  </children>
                               </VBox>
+
                            </children>
                         </HBox>
+                     <!--左中区域结束-->
                      </children>
                   </VBox>
+
+
+
+                  <!--底部右端区域-->
                   <VBox alignment="CENTER" prefHeight="480.0" prefWidth="177.0">
                      <children>
+                        <!--继续包裹-->
                         <VBox alignment="CENTER" prefHeight="468.0" prefWidth="283.0" VBox.vgrow="ALWAYS">
                            <children>
+                              <!--第一个group-->
                               <Group layoutX="14.0" layoutY="15.0">
                                  <children>
+
                                     <Pane layoutX="6.0" layoutY="39.0" prefHeight="20.0" prefWidth="263.0">
                                        <children>
+
                                           <VBox alignment="CENTER" layoutX="13.0" layoutY="-34.0" prefHeight="60.0" prefWidth="104.0">
+
                                              <children>
                                                 <SVGPath content="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="WHITE" scaleX="2.0" scaleY="2.0">
                                                    <effect>
@@ -309,37 +380,48 @@
                                                    </effect>
                                                 </SVGPath>
                                              </children>
+                                             <!--背景底纹-->
                                              <styleClass>
                                                 <String fx:value="scale" />
                                                 <String fx:value="success" />
                                              </styleClass>
+                                             <!--鼠标指针变化-->
                                              <cursor>
                                                 <Cursor fx:constant="HAND" />
                                              </cursor>
                                           </VBox>
+
+                                          <!--底部线-->
                                           <Label layoutX="13.0" layoutY="35.0" minHeight="5.0" prefHeight="5.0" prefWidth="238.0" styleClass="success" />
+
                                           <Label alignment="CENTER_RIGHT" layoutX="160.0" layoutY="-34.0" prefHeight="35.0" prefWidth="88.0" style="-fx-text-fill: -text-color;" styleClass="h4" text="Registered" textFill="#8d8b8b">
                                              <font>
                                                 <Font name="Roboto Black" size="14.0" />
                                              </font>
                                           </Label>
+
                                           <Label alignment="TOP_RIGHT" layoutX="159.0" layoutY="2.0" prefHeight="36.0" prefWidth="88.0" style="-fx-text-fill: -text-color;" styleClass="h5" text="10">
                                              <font>
                                                 <Font name="Roboto Black" size="24.0" />
                                              </font>
                                           </Label>
+
                                           <Label alignment="CENTER" layoutX="17.0" layoutY="40.0" prefHeight="18.0" prefWidth="238.0" style="-fx-text-fill: -text-color;" styleClass="h5" text="Total number of users" textAlignment="RIGHT">
                                              <font>
                                                 <Font name="Roboto" size="14.0" />
                                              </font>
                                           </Label>
+
                                        </children>
                                        <effect>
                                           <DropShadow color="#0000001a" />
                                        </effect>
                                     </Pane>
+
                                  </children>
                               </Group>
+
+
                               <Group>
                                  <children>
                                     <Pane layoutX="6.0" layoutY="39.0" prefHeight="84.0" prefWidth="263.0">
@@ -383,6 +465,8 @@
                                     </Pane>
                                  </children>
                               </Group>
+
+
                               <Group layoutX="14.0" layoutY="151.0">
                                  <children>
                                     <Pane layoutX="6.0" layoutY="39.0" prefHeight="61.0" prefWidth="263.0">
@@ -469,21 +553,26 @@
                                     </Pane>
                                  </children>
                               </Group>
+
                            </children>
                            <styleClass>
                               <String fx:value="border" />
                               <String fx:value="border-1" />
                            </styleClass>
                         </VBox>
+
                      </children>
                   </VBox>
+
                </children>
             </HBox>
+
          </children>
          <StackPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </StackPane.margin>
       </VBox>
+
    </children>
     <stylesheets>
         <URL value="@/styles/theme/material-color.css" />

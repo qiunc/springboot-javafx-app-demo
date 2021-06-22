@@ -34,6 +34,7 @@ public class ConfigController implements Initializable {
     }
 
     private boolean invert = false;
+
     @FXML
     private void altTheme() {
         invertTheme(!invert);

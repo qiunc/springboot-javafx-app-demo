@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.embed.swing.SwingNode?>
+<AnchorPane  fx:id="rootAnchorPane" id="AnchorPane" prefHeight="684.0" prefWidth="1105.0" stylesheets="/css/mainview.css"
+             xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+             >
+    <VBox layoutX="23.0" layoutY="23.0" prefHeight="274.0" prefWidth="320.0" style="-fx-background-color: #00A8FF;"
+          styleClass="card-unpadded" spacing="20" AnchorPane.topAnchor="23"
+          AnchorPane.leftAnchor="23"  minWidth="0" minHeight="0">
+        <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="320.0" spacing="20.0"
+              style="-fx-background-color: #00A0F3;">
+            <padding>
+                <Insets left="20.0"/>
+            </padding>
+<!--            <ImageView fx:id="image1" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">-->
+<!--                <Image url="@/images/appoint.png">-->
+<!--            </ImageView>-->
+            <Label prefHeight="20.0" prefWidth="233.0"
+                   style="-fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 17px;"
+                   text="串口发送设置"/>
+        </HBox>
+        <!--        <VBox prefHeight="62.0" prefWidth="320.0">-->
+        <!--            <Label prefHeight="35.0" prefWidth="191.0"-->
+        <!--                   style="-fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold;"-->
+        <!--                   text="All Appointments">-->
+        <!--                <padding>-->
+        <!--                    <Insets left="10.0"/>-->
+        <!--                </padding>-->
+        <!--            </Label>-->
+        <!--            <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="100.0" spacing="20.0">-->
+        <!--                <padding>-->
+        <!--                    <Insets left="10.0"/>-->
+        <!--                </padding>-->
+        <!--                <JFXProgressBar progress="1.0"/>-->
+        <!--                <Label style="-fx-font-weight: bold; -fx-font-size: 15pt; -fx-text-fill: white;"-->
+        <!--                       text="123"/>-->
+        <!--            </HBox>-->
+        <!--        </VBox>-->
+        <!--        <VBox prefHeight="58.0" prefWidth="320.0">-->
+        <!--            <Label prefHeight="35.0" prefWidth="181.0"-->
+        <!--                   style="-fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold;"-->
+        <!--                   text="Expired Appointments">-->
+        <!--                <padding>-->
+        <!--                    <Insets left="10.0"/>-->
+        <!--                </padding>-->
+        <!--            </Label>-->
+        <!--            <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="100.0" spacing="20.0">-->
+        <!--                <padding>-->
+        <!--                    <Insets left="10.0"/>-->
+        <!--                </padding>-->
+        <!--                <JFXProgressBar progress="0.43"/>-->
+        <!--                <Label style="-fx-font-weight: bold; -fx-font-size: 15pt; -fx-text-fill: white;" text="39"/>-->
+        <!--            </HBox>-->
+        <!--        </VBox>-->
+        <!--        <VBox prefHeight="65.0" prefWidth="320.0">-->
+        <!--            <Label prefHeight="35.0" prefWidth="185.0"-->
+        <!--                   style="-fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold;"-->
+        <!--                   text="Pending Appointments">-->
+        <!--                <padding>-->
+        <!--                    <Insets left="10.0"/>-->
+        <!--                </padding>-->
+        <!--            </Label>-->
+        <!--            <HBox alignment="CENTER_LEFT" prefHeight="37.0" prefWidth="100.0" spacing="20.0">-->
+        <!--                <padding>-->
+        <!--                    <Insets left="10.0"/>-->
+        <!--                </padding>-->
+        <!--                <JFXProgressBar progress="0.37"/>-->
+        <!--                <Label style="-fx-font-weight: bold; -fx-font-size: 15pt; -fx-text-fill: white;" text="45"/>-->
+        <!--            </HBox>-->
+        <!--            </VBox>-->
+    </VBox>
+    <!--串口信息-->
+    <VBox  prefHeight="358.0" prefWidth="320.0" spacing="20.0" styleClass="card-unpadded"
+           AnchorPane.bottomAnchor="13" AnchorPane.topAnchor="313" AnchorPane.leftAnchor="23">
+        <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="320.0" spacing="20.0"
+              style="-fx-background-color: #00A65A;">
+            <padding>
+                <Insets left="20.0"/>
+            </padding>
+<!--            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">-->
+<!--                <Image url="@/images/add.png"/>-->
+<!--            </ImageView>-->
+            <Label prefHeight="20.0" prefWidth="233.0"
+                   style="-fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 17px;"
+                   text="参数设置"/>
+        </HBox>
+        <!--<JFXTextField labelFloat="true" maxWidth="320.0" minWidth="320.0" prefHeight="39.0" prefWidth="320.0"
+                      promptText="Patient names"/> -->
+
+        <VBox prefHeight="58.0" prefWidth="270.0">
+            <padding>
+                <Insets left="15.0" right="10.0"/>
+            </padding>
+            <Label style="-fx-text-fill: #AAAAAA;" text="选择串口"/>
+            <JFXComboBox fx:id="serialPortComboBox" prefHeight="30.0" prefWidth="295.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="暂无数据"/>
+
+                    </FXCollections>
+                </items>
+            </JFXComboBox>
+        </VBox>
+
+        <VBox prefHeight="58.0" prefWidth="270.0">
+            <padding>
+                <Insets left="15.0" right="10.0"/>
+            </padding>
+            <Label style="-fx-text-fill: #AAAAAA;" text="选择波特率"/>
+            <JFXComboBox fx:id="bpsComboBox" prefHeight="30.0" prefWidth="295.0">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="2400"/>
+                        <String fx:value="4800"/>
+                        <String fx:value="9600"/>
+                    </FXCollections>
+                </items>
+            </JFXComboBox>
+        </VBox>
+        <VBox layoutX="10.0" layoutY="97.0" prefHeight="58.0" prefWidth="270.0">
+            <padding>
+                <Insets left="15.0"/>
+            </padding>
+            <Label style="-fx-text-fill: #AAAAAA;" text="Appointment Date"/>
+            <JFXDatePicker prefHeight="19.0" prefWidth="276.0"/>
+        </VBox>
+        <HBox alignment="CENTER" prefHeight="57.0" prefWidth="320.0">
+            <JFXButton fx:id="openButton" buttonType="RAISED" styleClass="blue-btn" text="打开串口"
+                       />
+        </HBox>
+    </VBox>
+
+    <!-- 绘制折线图-->
+    <AnchorPane prefHeight="646.0" prefWidth="734.0" styleClass="card-unpadded" AnchorPane.topAnchor="23"
+                AnchorPane.rightAnchor="13"
+                AnchorPane.leftAnchor="359" AnchorPane.bottomAnchor="13">
+
+        <AnchorPane AnchorPane.topAnchor="6" AnchorPane.leftAnchor="3" AnchorPane.bottomAnchor="147"
+                    AnchorPane.rightAnchor="13">
+            <JFXTabPane prefHeight="480.0" prefWidth="724.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.topAnchor="0"
+                        AnchorPane.leftAnchor="0" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0">
+                <Tab text="温度">
+
+                    <SwingNode fx:id="swingNode">
+
+
+                    </SwingNode>
+                    <!--                    <AnchorPane fx:id="lineChartPane"  >-->
+                    <!--                        <LineChart fx:id="tempLineChart" prefHeight="450.0" prefWidth="700.0" visible="false">-->
+                    <!--                            <xAxis>-->
+                    <!--                                <CategoryAxis side="BOTTOM"/>-->
+                    <!--                            </xAxis>-->
+                    <!--                            <yAxis>-->
+                    <!--                                <NumberAxis side="LEFT"/>-->
+                    <!--                            </yAxis>-->
+
+                    <!--                        </LineChart>-->
+
+
+                    <!--                    </AnchorPane>-->
+                    <!--                    <LineChart fx:id="tmpLineChart" id="lineChart" layoutX="140.0" layoutY="15.0">-->
+                    <!--                        <xAxis>-->
+                    <!--                            <CategoryAxis side="BOTTOM"/>-->
+                    <!--                        </xAxis>-->
+                    <!--                        <yAxis>-->
+                    <!--                            <NumberAxis side="LEFT"/>-->
+                    <!--                        </yAxis>-->
+                    <!--                    </LineChart>-->
+
+                </Tab>
+
+                <Tab text="转速  ">
+
+                    <SwingNode fx:id="spedSwingNode">
+
+
+                    </SwingNode>
+                    <!--                    <AnchorPane fx:id="speedLineChartPane">-->
+                    <!--                        <LineChart fx:id="speedLineChart" prefHeight="450.0" prefWidth="700.0" visible="false">-->
+                    <!--                            <xAxis>-->
+                    <!--                                <CategoryAxis side="BOTTOM"/>-->
+                    <!--                            </xAxis>-->
+                    <!--                            <yAxis>-->
+                    <!--                                <NumberAxis side="LEFT"/>-->
+                    <!--                            </yAxis>-->
+
+                    <!--                        </LineChart>-->
+
+
+                    <!--                    </AnchorPane>-->
+
+
+                </Tab>
+
+            </JFXTabPane>
+            <!--                <TableView layoutX="13.0" layoutY="14.0" prefHeight="292.0" prefWidth="700.0">-->
+            <!--                   <columns>-->
+            <!--                       <TableColumn prefWidth="75.0" text="C1"/>-->
+            <!--                       <TableColumn prefWidth="75.0" text="C2"/>-->
+            <!--                   </columns>-->
+            <!--               </TableView>-->
+        </AnchorPane>
+
+
+        <AnchorPane prefHeight="134.0" prefWidth="724.0" AnchorPane.bottomAnchor="0"
+                    AnchorPane.rightAnchor="13" AnchorPane.leftAnchor="3" >
+            <TitledPane animated="false"
+                        styleClass="blue-titledPane" text="串口数据" prefHeight="134.0" prefWidth="724.0"
+                        AnchorPane.bottomAnchor="0"
+                        AnchorPane.rightAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0">
+
+                <AnchorPane>
+                    <!-- <TableView layoutX="247.0" layoutY="14.0" prefHeight="200.0" prefWidth="453.0">
+                         <columns>
+                             <TableColumn prefWidth="75.0" text="C1"/>
+                             <TableColumn prefWidth="75.0" text="C2"/>
+                         </columns>
+                     </TableView>
+                     -->
+                    <HBox
+                            spacing="30.0">
+                        <VBox layoutX="15.0" layoutY="14.0" prefHeight="64.0" prefWidth="90.0"
+                              spacing="10.0">
+                            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0"
+                                   prefHeight="30.0" prefWidth="90.0"
+                                   text="温度"/>
+                            <Label alignment="CENTER" contentDisplay="CENTER"
+                                   prefHeight="30.0" prefWidth="90.0"
+                                   style="-fx-font-weight: bold;" text="转速"/>
+                            <!--  <JFXCheckBox prefHeight="19.0" prefWidth="121.0" text="Doctor's name"/>
+                              <JFXCheckBox text="Patient's name"/> -->
+                        </VBox>
+
+
+                        <VBox layoutX="15.0" layoutY="14.0" prefHeight="64.0" prefWidth="90.0"
+                              spacing="10.0">
+                            <Label fx:id="tmpLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0"
+                                   layoutY="14.0"
+                                   prefHeight="30.0" prefWidth="90.0"
+                                   style="-fx-font-weight: bold;"
+                                   styleClass="green-label" text="暂无数据"/>
+                            <Label fx:id="speedLabel" alignment="CENTER" contentDisplay="BOTTOM"
+                                   prefHeight="30.0" prefWidth="90.0"
+                                   style="-fx-font-weight: bold;"
+                                   styleClass="green-label" text="暂无数据"/>
+                        </VBox>
+                        <!-- <TextField layoutX="9.0" layoutY="112.0" prefHeight="29.0" prefWidth="191.0"
+                                    promptText="Search here" styleClass="search-box"/>
+                         <JFXButton layoutX="64.0" layoutY="153.0" ripplerFill="#0ff75e"
+                                    style="-fx-background-color: #AAAAAA;" text="Search..."/>-->
+                    </HBox>
+                </AnchorPane>
+            </TitledPane>
+        </AnchorPane>
+    </AnchorPane>
+</AnchorPane>

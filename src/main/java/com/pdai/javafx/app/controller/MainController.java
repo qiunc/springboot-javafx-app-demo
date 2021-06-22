@@ -40,6 +40,10 @@ public class MainController extends BaseController implements Initializable {
 
 	@FXML
 	public VBox sideBar;
+	//数据查询
+	@FXML
+	public Button dataSearch;
+	//左侧垂直盒子
 	@FXML
 	private VBox views;
 	@FXML
@@ -55,17 +59,22 @@ public class MainController extends BaseController implements Initializable {
 	private Button about;
 	@FXML
 	private Button webview;
+	//
 	@FXML
 	private Button hamburger;
-
+	//主面板
 	@FXML
 	private StackPane root;
+	//隐藏菜单栏
 	@FXML
 	private JFXButton config;
+	//左侧进入界面按钮
 	@FXML
 	private VBox drawer;
+	//右上消息按钮
 	@FXML
 	private JFXBadge messages;
+	//右上通知按钮
 	@FXML
 	private JFXBadge notifications;
 	@FXML
@@ -256,8 +265,8 @@ public class MainController extends BaseController implements Initializable {
 	}
 
 	@FXML
-	private void dashboard() {
-		updateBody(FxmlView.MODULE_DASHBOARD);
+	private void mainView() {
+		updateBody(FxmlView.MAIN_VIEW);
 	}
 
 	private void updateBody(FxmlView view) {
@@ -266,9 +275,10 @@ public class MainController extends BaseController implements Initializable {
 	}
 
 	@FXML
-	private void jfxTextField() {
-		// title.setText("JFXTextField");
-		SpringUtils.getBean(StageManager.class).showPopWindow(FxmlView.MODULE_DASHBOARD);
+	private void dataSearch() {
+		 //title.setText("JFXTextField");
+		updateBody(FxmlView.MODULE_DASHBOARD);
+		//SpringUtils.getBean(StageManager.class).showPopWindow(FxmlView.MODULE_DASHBOARD);
 		// body.setContent(ViewManager.getInstance().get("jfx-text-field"));
 	}
 

@@ -6,7 +6,8 @@ public enum FxmlView {
     MAIN {
         @Override
 		public String title() {
-            return getStringFromResourceBundle("app.title");
+            return "离心机管理系统";
+                    //getStringFromResourceBundle("app.title");
         }
 
         @Override
@@ -14,11 +15,24 @@ public enum FxmlView {
             return "/template/main/main.fxml";
         }
 
-    }, 
+    },
+    MAIN_VIEW {
+        @Override
+        public String title() {
+            return "主界面";
+        }
+
+        @Override
+        public String fxml() {
+            return "/template/module/serialPort.fxml";
+        }
+    },
+
     MODULE_DASHBOARD {
         @Override
 		public String title() {
-            return getStringFromResourceBundle("module.dashboard.title");
+            return "数据查询";
+                    //getStringFromResourceBundle("module.dashboard.title");
         }
 
         @Override
@@ -30,7 +44,8 @@ public enum FxmlView {
     MODULE_PROFILE {
         @Override
 		public String title() {
-            return getStringFromResourceBundle("module.profile.title");
+            return "关于我们";
+                    //getStringFromResourceBundle("module.profile.title");
         }
 
         @Override
@@ -42,7 +57,8 @@ public enum FxmlView {
     MODULE_WEBVIEW {
         @Override
 		public String title() {
-            return getStringFromResourceBundle("module.webview.title");
+            return "内质网页";
+                    //getStringFromResourceBundle("module.webview.title");
         }
 
         @Override
