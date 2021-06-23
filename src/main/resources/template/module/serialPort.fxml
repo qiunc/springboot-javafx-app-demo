@@ -1,31 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXProgressBar?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import java.lang.String?>
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.Group?>
-<?import javafx.scene.chart.AreaChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.SVGPath?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
 <?import javafx.embed.swing.SwingNode?>
-<StackPane prefHeight="1500.0" prefWidth="992.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pdai.javafx.app.controller.SerialPortController">
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Label?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.collections.FXCollections?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXButton?>
+<StackPane prefHeight="1500.0" prefWidth="992.0" xmlns="http://javafx.com/javafx/8.0.171" stylesheets="/css/mainview.css"
+           xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pdai.javafx.app.controller.SerialPortController">
     <children>
 
         <!--整体使用垂直布局-->
@@ -33,344 +24,141 @@
             <children>
 
                 <!--顶部图形区域-->
-                <HBox alignment="CENTER" spacing="20.0">
+                <HBox alignment="CENTER" spacing="20.0" VBox.vgrow="ALWAYS">
                     <children>
 
-                        <VBox prefHeight="401.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                        <VBox prefHeight="568.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                             <children>
-
-
-                                        <!--绘制曲线-->
-                                        <HBox alignment="CENTER" prefHeight="401.0" prefWidth="972.0" minHeight="301">
-                                            <children>
-
-                                                <SwingNode fx:id="swingNode">
-
-                                                </SwingNode>
-
-                                            </children>
-                                            <styleClass>
-                                                <String fx:value="border" />
-                                                <String fx:value="border-1" />
-                                            </styleClass>
-                                        </HBox>
+                                <!--绘制曲线-->
+                                <SwingNode fx:id="swingNode">
+                                </SwingNode>
                             </children>
-                            <!--绘制细线边框-->
                             <styleClass>
-                                <String fx:value="border-1" />
-                                <String fx:value="border" />
+                                <String fx:value="border"/>
+                                <String fx:value="border-1"/>
                             </styleClass>
                         </VBox>
+
                     </children>
                 </HBox>
 
 
-
                 <!--下半部分采用水平-->
-                <HBox alignment="CENTER" spacing="20.0" VBox.vgrow="ALWAYS">
+                <HBox spacing="20.0" VBox.vgrow="ALWAYS">
                     <children>
                         <!--用于竖直拓展-->
                         <VBox HBox.hgrow="ALWAYS">
                             <children>
 
                                 <!--底部左中-->
-                                <HBox prefHeight="268.0" prefWidth="547.0" spacing="20.0" VBox.vgrow="ALWAYS">
+                                <HBox prefHeight="468.0" prefWidth="547.0" spacing="20.0" VBox.vgrow="ALWAYS">
                                     <children>
-                                        <!--底部左边-->
-                                        <VBox spacing="10.0" HBox.hgrow="ALWAYS">
-                                            <children>
-                                                <!--图主题--> <!--饼状图部分-->
-                                                <PieChart fx:id="pieChart" title="Pie Chart" minHeight="368">
-                                                    <styleClass>
-                                                        <String fx:value="border" />
-                                                        <String fx:value="border-1" />
-                                                    </styleClass>
-                                                    <padding>
-                                                        <Insets bottom="5.0" left="5.0" top="5.0" />
-                                                    </padding>
-                                                </PieChart>
 
-                                                <!--prefile进度条-->
-<!--                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">-->
-<!--                                                    <children>-->
+                                        <VBox  prefHeight="358.0" prefWidth="320.0" spacing="20.0" >
+                                            <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="320.0" spacing="20.0"
+                                                  style="-fx-background-color: #00A65A;">
+                                                <padding>
+                                                    <Insets left="20.0"/>
+                                                </padding>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                    <Image url="/images/add.png"/>
+                                                </ImageView>
+                                                <Label prefHeight="20.0" prefWidth="233.0"
+                                                       style="-fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 17px;"
+                                                       text="参数设置"/>
+                                            </HBox>
+                                            <!--<JFXTextField labelFloat="true" maxWidth="320.0" minWidth="320.0" prefHeight="39.0" prefWidth="320.0"
+                                                          promptText="Patient names"/> -->
 
-<!--                                                        <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="20.0" HBox.hgrow="ALWAYS">-->
-<!--                                                            <children>-->
-<!--                                                                <Label styleClass="h4" text="Prefile" />-->
-<!--                                                                <JFXProgressBar progress="0.46" />-->
-<!--                                                            </children>-->
-<!--                                                            <HBox.margin>-->
-<!--                                                                <Insets left="10.0" />-->
-<!--                                                            </HBox.margin>-->
-<!--                                                        </VBox>-->
+                                            <VBox prefHeight="58.0" prefWidth="270.0">
+                                                <padding>
+                                                    <Insets left="15.0" right="10.0"/>
+                                                </padding>
+                                                <Label style="-fx-text-fill: #AAAAAA;" text="选择串口"/>
+                                                <JFXComboBox fx:id="serialPortComboBox" prefHeight="30.0" prefWidth="295.0">
+                                                    <items>
+                                                        <FXCollections fx:factory="observableArrayList">
+                                                            <String fx:value="暂无数据"/>
 
-<!--                                                    </children>-->
-<!--                                                    <styleClass>-->
-<!--                                                        <String fx:value="border" />-->
-<!--                                                        <String fx:value="border-1" />-->
-<!--                                                    </styleClass>-->
-<!--                                                    <padding>-->
-<!--                                                        <Insets bottom="5.0" left="5.0" top="5.0" />-->
-<!--                                                    </padding>-->
-<!--                                                    &lt;!&ndash;进度条结束&ndash;&gt;-->
-<!--                                                </HBox>-->
+                                                        </FXCollections>
+                                                    </items>
+                                                </JFXComboBox>
+                                            </VBox>
 
-                                                <!--底部左边区域结束-->
-                                            </children>
+                                            <VBox prefHeight="58.0" prefWidth="270.0">
+                                                <padding>
+                                                    <Insets left="15.0" right="10.0"/>
+                                                </padding>
+                                                <Label style="-fx-text-fill: #AAAAAA;" text="选择波特率"/>
+                                                <JFXComboBox fx:id="bpsComboBox" prefHeight="30.0" prefWidth="295.0">
+                                                    <items>
+                                                        <FXCollections fx:factory="observableArrayList">
+                                                            <String fx:value="2400"/>
+                                                            <String fx:value="4800"/>
+                                                            <String fx:value="9600"/>
+                                                        </FXCollections>
+                                                    </items>
+                                                </JFXComboBox>
+                                            </VBox>
+
+                                            <VBox layoutX="10.0" layoutY="97.0" prefHeight="58.0" prefWidth="270.0">
+                                                <padding>
+                                                    <Insets left="15.0"/>
+                                                </padding>
+                                                <Label style="-fx-text-fill: #AAAAAA;" text="Appointment Date"/>
+                                                <JFXDatePicker prefHeight="19.0" prefWidth="276.0"/>
+                                            </VBox>
+
+                                            <HBox prefHeight="57.0" prefWidth="320.0" spacing="100">
+                                                <padding>
+                                                    <Insets left="15.0"/>
+                                                </padding>
+                                                <JFXButton fx:id="openButton" buttonType="RAISED" onAction="#openSerialPort" styleClass="blue-btn" text="打开串口"/>
+                                                <JFXButton fx:id="closeButton" buttonType="RAISED" onAction="#closeSerialPort" styleClass="cancel-button" text="关闭串口"/>
+                                            </HBox>
+                                                <styleClass>
+                                                    <String fx:value="border"/>
+                                                    <String fx:value="border-1"/>
+                                                </styleClass>
                                         </VBox>
 
 
-                                        <!--followme区域-->
-                                        <VBox prefHeight="1058.0" prefWidth="457.0" spacing="10.0" HBox.hgrow="ALWAYS">
-                                            <children>
-                                                <VBox alignment="CENTER" maxHeight="-Infinity" prefHeight="219.0" prefWidth="303.0" spacing="10.0">
-                                                    <children>
-                                                        <JFXButton styleClass="follow" text="Follow me">
-                                                            <cursor>
-                                                                <Cursor fx:constant="HAND" />
-                                                            </cursor>
-                                                        </JFXButton>
-                                                    </children>
-                                                    <styleClass>
-                                                        <String fx:value="border" />
-                                                        <String fx:value="border-1" />
-                                                    </styleClass>
-                                                </VBox>
-                                            </children>
-                                        </VBox>
+
+
+                                        <!--图主题--> <!--饼状图部分-->
+                                        <PieChart fx:id="pieChart" title="Pie Chart">
+                                            <styleClass>
+                                                <String fx:value="border"/>
+                                                <String fx:value="border-1"/>
+                                            </styleClass>
+                                            <padding>
+                                                <Insets bottom="5.0" left="5.0" top="5.0"/>
+                                            </padding>
+                                        </PieChart>
 
                                     </children>
                                 </HBox>
                                 <!--左中区域结束-->
                             </children>
                         </VBox>
-
-
-
-                        <!--底部右端区域-->
-                        <VBox alignment="CENTER" prefHeight="480.0" prefWidth="177.0">
-                            <children>
-                                <!--继续包裹-->
-                                <VBox alignment="CENTER" prefHeight="468.0" prefWidth="283.0" VBox.vgrow="ALWAYS">
-                                    <children>
-                                        <!--第一个group-->
-                                        <Group layoutX="14.0" layoutY="15.0">
-                                            <children>
-
-                                                <Pane layoutX="6.0" layoutY="39.0" prefHeight="20.0" prefWidth="263.0">
-                                                    <children>
-
-                                                        <VBox alignment="CENTER" layoutX="13.0" layoutY="-34.0" prefHeight="60.0" prefWidth="104.0">
-
-                                                            <children>
-                                                                <SVGPath content="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="WHITE" scaleX="2.0" scaleY="2.0">
-                                                                    <effect>
-                                                                        <Glow />
-                                                                    </effect>
-                                                                </SVGPath>
-                                                            </children>
-                                                            <!--背景底纹-->
-                                                            <styleClass>
-                                                                <String fx:value="scale" />
-                                                                <String fx:value="success" />
-                                                            </styleClass>
-                                                            <!--鼠标指针变化-->
-                                                            <cursor>
-                                                                <Cursor fx:constant="HAND" />
-                                                            </cursor>
-                                                        </VBox>
-
-                                                        <!--底部线-->
-                                                        <Label layoutX="13.0" layoutY="35.0" minHeight="5.0" prefHeight="5.0" prefWidth="238.0" styleClass="success" />
-
-                                                        <Label alignment="CENTER_RIGHT" layoutX="160.0" layoutY="-34.0" prefHeight="35.0" prefWidth="88.0" style="-fx-text-fill: -text-color;" styleClass="h4" text="Registered" textFill="#8d8b8b">
-                                                            <font>
-                                                                <Font name="Roboto Black" size="14.0" />
-                                                            </font>
-                                                        </Label>
-
-                                                        <Label alignment="TOP_RIGHT" layoutX="159.0" layoutY="2.0" prefHeight="36.0" prefWidth="88.0" style="-fx-text-fill: -text-color;" styleClass="h5" text="10">
-                                                            <font>
-                                                                <Font name="Roboto Black" size="24.0" />
-                                                            </font>
-                                                        </Label>
-
-                                                        <Label alignment="CENTER" layoutX="17.0" layoutY="40.0" prefHeight="18.0" prefWidth="238.0" style="-fx-text-fill: -text-color;" styleClass="h5" text="Total number of users" textAlignment="RIGHT">
-                                                            <font>
-                                                                <Font name="Roboto" size="14.0" />
-                                                            </font>
-                                                        </Label>
-
-                                                    </children>
-                                                    <effect>
-                                                        <DropShadow color="#0000001a" />
-                                                    </effect>
-                                                </Pane>
-
-                                            </children>
-                                        </Group>
-
-
-                                        <Group>
-                                            <children>
-                                                <Pane layoutX="6.0" layoutY="39.0" prefHeight="84.0" prefWidth="263.0">
-                                                    <children>
-                                                        <VBox alignment="CENTER" layoutX="13.0" layoutY="-34.0" prefHeight="60.0" prefWidth="104.0">
-                                                            <children>
-                                                                <SVGPath content="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" fill="WHITE" scaleX="2.0" scaleY="2.0">
-                                                                    <effect>
-                                                                        <Glow />
-                                                                    </effect>
-                                                                </SVGPath>
-                                                            </children>
-                                                            <styleClass>
-                                                                <String fx:value="scale" />
-                                                                <String fx:value="btn-info" />
-                                                            </styleClass>
-                                                            <cursor>
-                                                                <Cursor fx:constant="HAND" />
-                                                            </cursor>
-                                                        </VBox>
-                                                        <Label layoutX="13.0" layoutY="35.0" minHeight="5.0" prefHeight="5.0" prefWidth="238.0" styleClass="btn-info" />
-                                                        <Label alignment="CENTER" layoutX="17.0" layoutY="40.0" prefHeight="22.0" prefWidth="229.0" style="-fx-text-fill: -text-color;" styleClass="h5" text="Total Items in stock" textAlignment="RIGHT">
-                                                            <font>
-                                                                <Font name="Roboto Regular" size="14.0" />
-                                                            </font>
-                                                        </Label>
-                                                        <Label alignment="CENTER_RIGHT" layoutX="160.0" layoutY="-34.0" prefHeight="35.0" prefWidth="88.0" style="-fx-text-fill: -text-color;" styleClass="h4" text="Registered" textFill="#8d8b8b">
-                                                            <font>
-                                                                <Font name="Roboto Black" size="14.0" />
-                                                            </font>
-                                                        </Label>
-                                                        <Label alignment="TOP_RIGHT" layoutX="159.0" layoutY="2.0" prefHeight="36.0" prefWidth="88.0" style="-fx-text-fill: -text-color;" styleClass="h5" text="20">
-                                                            <font>
-                                                                <Font name="Roboto Black" size="24.0" />
-                                                            </font>
-                                                        </Label>
-                                                    </children>
-                                                    <effect>
-                                                        <DropShadow color="#0000001a" />
-                                                    </effect>
-                                                </Pane>
-                                            </children>
-                                        </Group>
-
-
-                                        <Group layoutX="14.0" layoutY="151.0">
-                                            <children>
-                                                <Pane layoutX="6.0" layoutY="39.0" prefHeight="61.0" prefWidth="263.0">
-                                                    <children>
-                                                        <VBox alignment="CENTER" layoutX="13.0" layoutY="-34.0" prefHeight="60.0" prefWidth="104.0">
-                                                            <children>
-                                                                <SVGPath content="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" fill="WHITE" scaleX="2.0" scaleY="2.0">
-                                                                    <effect>
-                                                                        <Glow />
-                                                                    </effect>
-                                                                </SVGPath>
-                                                            </children>
-                                                            <styleClass>
-                                                                <String fx:value="scale" />
-                                                                <String fx:value="secondary" />
-                                                            </styleClass>
-                                                            <cursor>
-                                                                <Cursor fx:constant="HAND" />
-                                                            </cursor>
-                                                        </VBox>
-                                                        <Label layoutX="13.0" layoutY="35.0" minHeight="5.0" prefHeight="5.0" prefWidth="238.0" styleClass="secondary" />
-                                                        <Label alignment="CENTER" layoutX="17.0" layoutY="40.0" prefHeight="22.0" prefWidth="229.0" style="-fx-text-fill: -text-color;" styleClass="h5" text="Total number of employers" textAlignment="RIGHT">
-                                                            <font>
-                                                                <Font name="Roboto Regular" size="14.0" />
-                                                            </font>
-                                                        </Label>
-                                                        <Label alignment="CENTER_RIGHT" layoutX="160.0" layoutY="-34.0" prefHeight="35.0" prefWidth="88.0" style="-fx-text-fill: -text-color;" styleClass="h4" text="Registered" textFill="#8d8b8b">
-                                                            <font>
-                                                                <Font name="Roboto Black" size="14.0" />
-                                                            </font>
-                                                        </Label>
-                                                        <Label alignment="TOP_RIGHT" layoutX="159.0" layoutY="2.0" prefHeight="36.0" prefWidth="88.0" style="-fx-text-fill: -text-color;" styleClass="h5" text="30">
-                                                            <font>
-                                                                <Font name="Roboto Black" size="24.0" />
-                                                            </font>
-                                                        </Label>
-                                                    </children>
-                                                    <effect>
-                                                        <DropShadow color="#0000001a" />
-                                                    </effect>
-                                                </Pane>
-                                            </children>
-                                        </Group>
-                                        <Group layoutX="14.0" layoutY="287.0">
-                                            <children>
-                                                <Pane layoutX="6.0" layoutY="39.0" prefHeight="38.0" prefWidth="263.0">
-                                                    <children>
-                                                        <VBox alignment="CENTER" layoutX="13.0" layoutY="-34.0" prefHeight="60.0" prefWidth="104.0">
-                                                            <children>
-                                                                <SVGPath content="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="WHITE" scaleX="2.0" scaleY="2.0">
-                                                                    <effect>
-                                                                        <Glow />
-                                                                    </effect>
-                                                                </SVGPath>
-                                                            </children>
-                                                            <styleClass>
-                                                                <String fx:value="scale" />
-                                                                <String fx:value="warning" />
-                                                            </styleClass>
-                                                            <cursor>
-                                                                <Cursor fx:constant="HAND" />
-                                                            </cursor>
-                                                        </VBox>
-                                                        <Label layoutX="13.0" layoutY="35.0" minHeight="5.0" prefHeight="5.0" prefWidth="238.0" styleClass="warning" />
-                                                        <Label alignment="CENTER" layoutX="17.0" layoutY="40.0" prefHeight="22.0" prefWidth="229.0" style="-fx-text-fill: -text-color;" styleClass="h5" text="Total number of clients" textAlignment="RIGHT">
-                                                            <font>
-                                                                <Font name="Roboto Regular" size="14.0" />
-                                                            </font>
-                                                        </Label>
-                                                        <Label alignment="CENTER_RIGHT" layoutX="160.0" layoutY="-34.0" prefHeight="35.0" prefWidth="88.0" style="-fx-text-fill: -text-color;" styleClass="h4" text="Registered" textFill="#8d8b8b">
-                                                            <font>
-                                                                <Font name="Roboto Black" size="14.0" />
-                                                            </font>
-                                                        </Label>
-                                                        <Label alignment="TOP_RIGHT" layoutX="159.0" layoutY="2.0" prefHeight="36.0" prefWidth="88.0" style="-fx-text-fill: -text-color;" styleClass="h5" text="40">
-                                                            <font>
-                                                                <Font name="Roboto Black" size="24.0" />
-                                                            </font>
-                                                        </Label>
-                                                    </children>
-                                                    <effect>
-                                                        <DropShadow color="#0000001a" />
-                                                    </effect>
-                                                </Pane>
-                                            </children>
-                                        </Group>
-
-                                    </children>
-                                    <styleClass>
-                                        <String fx:value="border" />
-                                        <String fx:value="border-1" />
-                                    </styleClass>
-                                </VBox>
-
-                            </children>
-                        </VBox>
-
                     </children>
                 </HBox>
 
             </children>
             <StackPane.margin>
-                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
             </StackPane.margin>
         </VBox>
 
     </children>
     <stylesheets>
-        <URL value="@/styles/theme/material-color.css" />
-        <URL value="@/styles/theme/skeleton.css" />
-        <URL value="@/styles/theme/light.css" />
-        <URL value="@/styles/theme/bootstrap.css" />
-        <URL value="@/styles/theme/shape.css" />
-        <URL value="@/styles/theme/typographic.css" />
-        <URL value="@/styles/theme/helpers.css" />
-        <URL value="@/styles/theme/master.css" />
+        <URL value="@/styles/theme/material-color.css"/>
+        <URL value="@/styles/theme/skeleton.css"/>
+        <URL value="@/styles/theme/light.css"/>
+        <URL value="@/styles/theme/bootstrap.css"/>
+        <URL value="@/styles/theme/shape.css"/>
+        <URL value="@/styles/theme/typographic.css"/>
+        <URL value="@/styles/theme/helpers.css"/>
+        <URL value="@/styles/theme/master.css"/>
     </stylesheets>
 </StackPane>
