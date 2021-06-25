@@ -109,7 +109,14 @@
    
 }
 
-
+.status-btn{
+    -fx-background-color: rgb(0, 192, 239);
+    -fx-text-fill: #ffffff;
+    -fx-text-alignment: right;
+    -fx-button-type:raised;
+    -fx-font-size:32px;
+    -fx-font-weight:bold ;
+}
 
 .blue-btn{
     -fx-background-color: rgb(0, 192, 239);

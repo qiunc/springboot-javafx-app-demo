@@ -20,8 +20,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * ÕÛÏßÍ¼Àà
- * ÊµÏÖrunnable½Ó¿Ú
+ * æŠ˜çº¿å›¾ç±»
+ * å®ç°runnableæ¥å£
  */
 
 public class TemperatureChart extends ChartPanel implements Runnable {
@@ -33,10 +33,10 @@ public class TemperatureChart extends ChartPanel implements Runnable {
     public static Queue<Double> SpeedQueue = new LinkedList<>();
 
     /**
-     * @param chartContent  µÚÒ»ÌõÇúÏßÃû
-     * @param chartContent2 µÚ¶şÌõÇúÏßÃû
-     * @param title         Í¼Ïñ±êÌâ
-     * @param yaxisName     µÚÒ»ÌõYÖáÃû
+     * @param chartContent  ç¬¬ä¸€æ¡æ›²çº¿å
+     * @param chartContent2 ç¬¬äºŒæ¡æ›²çº¿å
+     * @param title         å›¾åƒæ ‡é¢˜
+     * @param yaxisName     ç¬¬ä¸€æ¡Yè½´å
      */
     public TemperatureChart(String chartContent, String chartContent2, String title, String yaxisName) {
         super(createChart(chartContent, chartContent2, title, yaxisName));
@@ -45,7 +45,7 @@ public class TemperatureChart extends ChartPanel implements Runnable {
 
 
     private static JFreeChart createChart(String chartContent, String chartContent2, String title, String yaxisName) {
-// ´´½¨Ê±ĞòÍ¼¶ÔÏó
+// åˆ›å»ºæ—¶åºå›¾å¯¹è±¡
 
         timeSeries = new TimeSeries(chartContent, Millisecond.class);
         timeSeries2 = new TimeSeries(chartContent2, Millisecond.class);
@@ -55,23 +55,24 @@ public class TemperatureChart extends ChartPanel implements Runnable {
         JFreeChart jfreechart = ChartFactory.createTimeSeriesChart(title, "Current Time", yaxisName, xydataset,
                 true, true, false);
         jfreechart.addSubtitle(new TextTitle("Two Line"));
+        jfreechart.setBackgroundPaint(Color.white);
 
-        //äÖÈ¾Æ÷
+        //æ¸²æŸ“å™¨
         XYPlot xyplot = jfreechart.getXYPlot();
         XYLineAndShapeRenderer renderer = (XYLineAndShapeRenderer) xyplot.getRenderer();
-        //¸ü¸ÄÏßÌõÑÕÉ«
+        //æ›´æ”¹çº¿æ¡é¢œè‰²
         renderer.setSeriesPaint(0, Color.RED);
 //        renderer.setSeriesPaint(1, Color.BLUE);
-        //ÉèÖÃÊı¾İµã¿É¼û
+        //è®¾ç½®æ•°æ®ç‚¹å¯è§
         renderer.setBaseShapesVisible(true);
-        //ÉèÖÃÊı¾İµãÏÔÊ¾Öµ
+        //è®¾ç½®æ•°æ®ç‚¹æ˜¾ç¤ºå€¼
 //        renderer.setBaseItemLabelGenerator( new StandardXYItemLabelGenerator());
 //        renderer.setBaseItemLabelsVisible(true);
         xyplot.setBackgroundPaint(ChartColor.WHITE);
         xyplot.setRangeGridlinePaint(ChartColor.BLACK);
         xyplot.setDomainGridlinePaint(ChartColor.BLACK);
 
-        //µÚ¶şÌõÇúÏß
+        //ç¬¬äºŒæ¡æ›²çº¿
         TimeSeriesCollection timeseriesCollection2 = new TimeSeriesCollection();
         timeseriesCollection2.addSeries(timeSeries2);
         NumberAxis numberaxis1 = new NumberAxis("Speed(rpm/min)");
@@ -83,17 +84,17 @@ public class TemperatureChart extends ChartPanel implements Runnable {
         xyplot.mapDatasetToRangeAxis(2, 2);
         StandardXYItemRenderer standardxyitemrenderer1 = new StandardXYItemRenderer();
         standardxyitemrenderer1.setSeriesPaint(0, Color.blue);
-        //ÉèÖÃÊı¾İµã¿É¼û
+        //è®¾ç½®æ•°æ®ç‚¹å¯è§
         standardxyitemrenderer1.setBaseShapesVisible(true);
         xyplot.setRenderer(2, standardxyitemrenderer1);
 
-        // ×İ×ø±êÉè¶¨
+        // çºµåæ ‡è®¾å®š
         ValueAxis valueaxis = xyplot.getDomainAxis();
-        // ×Ô¶¯ÉèÖÃÊı¾İÖáÊı¾İ·¶Î§
+        // è‡ªåŠ¨è®¾ç½®æ•°æ®è½´æ•°æ®èŒƒå›´
         valueaxis.setAutoRange(true);
-        // Êı¾İÖá¹Ì¶¨Êı¾İ·¶Î§ 30s
+        // æ•°æ®è½´å›ºå®šæ•°æ®èŒƒå›´ 30s
         valueaxis.setFixedAutoRange(30000D);
-        //Éè¶¨YÖáÊı¾İ·¶Î§
+        //è®¾å®šYè½´æ•°æ®èŒƒå›´
         valueaxis = xyplot.getRangeAxis();
         // valueaxis.setRange(0.0D,200D);
         return jfreechart;

@@ -93,6 +93,7 @@ public class MainController extends BaseController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		ctrl = this;
+
 		loadContentPopup();
 
 		populateItems();
@@ -266,6 +267,9 @@ public class MainController extends BaseController implements Initializable {
 
 	@FXML
 	private void mainView() {
+		SerialPortController bean = SpringUtils.getBean(SerialPortController.class);
+		SerialPortController bean1 = SpringUtils.getBean(SerialPortController.class);
+		System.out.println(bean==bean1);
 		updateBody(FxmlView.MAIN_VIEW);
 	}
 

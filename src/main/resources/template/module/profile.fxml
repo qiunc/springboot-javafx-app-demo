@@ -250,7 +250,7 @@
     <stylesheets>
         <URL value="@/styles/theme/material-color.css" />
         <URL value="@/styles/theme/skeleton.css" />
-        <URL value="@/styles/theme/light.css" />
+        <URL value="@/styles/theme/dark.css" />
         <URL value="@/styles/theme/bootstrap.css" />
         <URL value="@/styles/theme/shape.css" />
         <URL value="@/styles/theme/typographic.css" />

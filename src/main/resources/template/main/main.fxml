@@ -142,29 +142,29 @@
                                        </control>
                                     </JFXBadge>
                                     <!--通知按钮-->
-                                    <JFXBadge fx:id="notifications" onMouseClicked="#openNotification" position="TOP_RIGHT" prefHeight="44.0" prefWidth="35.0" text="41">
-                                       <styleClass>
-                                          <String fx:value="icon" />
-                                          <String fx:value="icon-warning" />
-                                       </styleClass>
-                                       <control>
-                                          <StackPane prefHeight="32.0" prefWidth="43.0" style="-fx-padding: 10;">
-                                             <children>
-                                                <FontAwesomeIconView glyphName="BELL" size="20" styleClass="icon" StackPane.alignment="CENTER" />
-                                             </children>
-                                          </StackPane>
-                                       </control>
-                                    </JFXBadge>
-                                    <!--消息按钮-->
-                                    <JFXBadge fx:id="messages" layoutX="759.0" layoutY="12.0" onMouseClicked="#openMessages" position="TOP_RIGHT" prefHeight="44.0" prefWidth="35.0" styleClass="icon" text="12">
-                                       <control>
-                                          <StackPane prefHeight="32.0" prefWidth="43.0" style="-fx-padding: 10;">
-                                             <children>
-                                                <FontAwesomeIconView glyphName="ENVELOPE" size="20" styleClass="icon" />
-                                             </children>
-                                          </StackPane>
-                                       </control>
-                                    </JFXBadge>
+<!--                                    <JFXBadge fx:id="notifications" onMouseClicked="#openNotification" position="TOP_RIGHT" prefHeight="44.0" prefWidth="35.0" text="41">-->
+<!--                                       <styleClass>-->
+<!--                                          <String fx:value="icon" />-->
+<!--                                          <String fx:value="icon-warning" />-->
+<!--                                       </styleClass>-->
+<!--                                       <control>-->
+<!--                                          <StackPane prefHeight="32.0" prefWidth="43.0" style="-fx-padding: 10;">-->
+<!--                                             <children>-->
+<!--                                                <FontAwesomeIconView glyphName="BELL" size="20" styleClass="icon" StackPane.alignment="CENTER" />-->
+<!--                                             </children>-->
+<!--                                          </StackPane>-->
+<!--                                       </control>-->
+<!--                                    </JFXBadge>-->
+<!--                                    &lt;!&ndash;消息按钮&ndash;&gt;-->
+<!--                                    <JFXBadge fx:id="messages" layoutX="759.0" layoutY="12.0" onMouseClicked="#openMessages" position="TOP_RIGHT" prefHeight="44.0" prefWidth="35.0" styleClass="icon" text="12">-->
+<!--                                       <control>-->
+<!--                                          <StackPane prefHeight="32.0" prefWidth="43.0" style="-fx-padding: 10;">-->
+<!--                                             <children>-->
+<!--                                                <FontAwesomeIconView glyphName="ENVELOPE" size="20" styleClass="icon" />-->
+<!--                                             </children>-->
+<!--                                          </StackPane>-->
+<!--                                       </control>-->
+<!--                                    </JFXBadge>-->
                                     <!--隐藏菜单栏-->
                                     <JFXButton fx:id="config" contentDisplay="GRAPHIC_ONLY" onMouseClicked="#openConfig" prefHeight="83.0" prefWidth="40.0" ripplerFill="BLACK">
                                        <graphic>

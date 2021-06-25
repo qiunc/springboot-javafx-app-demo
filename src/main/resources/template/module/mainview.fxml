@@ -10,7 +10,7 @@
 <?import java.lang.String?>
 <?import javafx.embed.swing.SwingNode?>
 <AnchorPane  fx:id="rootAnchorPane" id="AnchorPane" prefHeight="684.0" prefWidth="1105.0" stylesheets="/css/mainview.css"
-             xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+             xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pdai.javafx.app.controller.AppointmentController"
              >
     <VBox layoutX="23.0" layoutY="23.0" prefHeight="274.0" prefWidth="320.0" style="-fx-background-color: #00A8FF;"
           styleClass="card-unpadded" spacing="20" AnchorPane.topAnchor="23"
@@ -133,7 +133,7 @@
             <JFXDatePicker prefHeight="19.0" prefWidth="276.0"/>
         </VBox>
         <HBox alignment="CENTER" prefHeight="57.0" prefWidth="320.0">
-            <JFXButton fx:id="openButton" buttonType="RAISED" styleClass="blue-btn" text="打开串口"
+            <JFXButton fx:id="openButton" buttonType="RAISED" styleClass="blue-btn" text="打开串口" onAction="#openSerialButton"
                        />
         </HBox>
     </VBox>
@@ -258,6 +258,7 @@
                                     style="-fx-background-color: #AAAAAA;" text="Search..."/>-->
                     </HBox>
                 </AnchorPane>
+
             </TitledPane>
         </AnchorPane>
     </AnchorPane>

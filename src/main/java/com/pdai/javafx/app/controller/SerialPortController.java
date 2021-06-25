@@ -1,7 +1,7 @@
 package com.pdai.javafx.app.controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.pdai.javafx.app.utils.DialogBuilder;
+import com.pdai.javafx.app.utils.TemperatureChart;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -45,19 +45,24 @@ public class SerialPortController extends BaseController implements Initializabl
     @FXML
     private PieChart pieChart;
 
+    TemperatureChart temperatureChart;
+
     @SuppressWarnings("unchecked")
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-                new PieChart.Data("Sun", Math.random()),
-                new PieChart.Data("IBM", Math.random()),
-                new PieChart.Data("HP", Math.random()),
-                new PieChart.Data("Dell", Math.random()),
-                new PieChart.Data("Apple", Math.random())
-        );
-        pieChart.setData(pieChartData);
-        pieChart.setClockwise(false);
+        temperatureChart = new TemperatureChart("Temperature", "Speed", "Data Chart", "Temperature (℃)");
+//        swingNode.setContent(temperatureChart);
+//        swingNode.requestFocus();
+//        swingNode.autosize();
+//        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+//                new PieChart.Data("Sun", Math.random()),
+//                new PieChart.Data("IBM", Math.random()),
+//                new PieChart.Data("HP", Math.random()),
+//                new PieChart.Data("Dell", Math.random()),
+//                new PieChart.Data("Apple", Math.random())
+//        );
+//        pieChart.setData(pieChartData);
+//        pieChart.setClockwise(false);
 
 //        XYChart.Series<String, Number> series = new XYChart.Series<>();
 //        series.setName("测试柱状图数据");
@@ -157,15 +162,21 @@ public class SerialPortController extends BaseController implements Initializabl
 
     }
 
-    public void openSerialPort(ActionEvent actionEvent) {
-        HashMap<String, String> hashMap = new HashMap<>();
+    public void openSerialPort() {
 
-        new DialogBuilder(openButton)
-                .setTitle("参数设置")
+        swingNode.setContent(temperatureChart);
+        swingNode.requestFocus();
+        swingNode.autosize();
+        new Thread(temperatureChart).start();
+//        HashMap<String, String> hashMap = new HashMap<>();
+//
+//        new DialogBuilder(openButton)
+//                .setTitle("参数设置")
 //                .setMessage("KSP")
 //                .setTextFieldText("升速参数, 范围5~250, 默认220", new DialogBuilder.OnInputListener() {
 //                    @Override
-//                    public void onGetText(String result) {
+//                    public void o<?xml version="1.0" encoding="UTF-8"?>
+//<?import com.jfoenix.controls.JFXTreeCell?><JFXTreeCell/>nGetText(String result) {
 //                        hashMap.put("KSP", result);
 //                    }
 //                }).setMessage("KSI")
@@ -181,13 +192,13 @@ public class SerialPortController extends BaseController implements Initializabl
 //                        hashMap.put("1", result);
 //                    }
 //                })
-                .setMessage("开锁时间")
-                .setTextFieldText("升速参数, 范围5~80, 默认20", new DialogBuilder.OnInputListener() {
-                    @Override
-                    public void onGetText(String result) {
-                        //System.out.println("12"+result);
-                    }
-                }).setPositiveBtn("确定").setNegativeBtn("取消").create();
+//                .setMessage("开锁时间")
+//                .setTextFieldText("升速参数, 范围5~80, 默认20", new DialogBuilder.OnInputListener() {
+//                    @Override
+//                    public void onGetText(String result) {
+//                        //System.out.println("12"+result);
+//                    }
+//                }).setPositiveBtn("确定").setNegativeBtn("取消").create();
 //                .setPositiveBtn("确定", new DialogBuilder.OnClickListener() {
 //                    @Override
 //                    public void onClick() {

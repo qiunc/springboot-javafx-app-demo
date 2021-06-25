@@ -7,9 +7,11 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Supplier;
 
+import com.pdai.javafx.app.SpringFxAppApplication;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import com.gn.decorator.GNDecorator;
@@ -64,7 +66,10 @@ public abstract class AbstractFxApplication extends Application {
 		CompletableFuture.supplyAsync(new Supplier<ConfigurableApplicationContext>() {
 			@Override
 			public ConfigurableApplicationContext get() {
-				return applicationContext = SpringApplication.run(appClass, args);
+//				SpringApplicationBuilder builder = new SpringApplicationBuilder(AbstractFxApplication.class);
+//				builder.headless(false).run(args);
+				 return applicationContext = SpringApplication.run(appClass, args);
+
 			}
 		}).whenComplete((ctx, throwable) -> {
 					if (throwable != null) {

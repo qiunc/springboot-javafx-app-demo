@@ -2,7 +2,20 @@
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/utils/TemperatureChart.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/controller/AppointmentController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/serialException/ExceptionWriter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/serialException/NoSuchPort.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/serialException/NotASerialPort.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/serialException/PortInUse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/serialException/ReadDataFromSerialPortFailure.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/serialException/SendDataToSerialPortFailure.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/serialException/SerialPortInputStreamCloseFailure.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/serialException/SerialPortOutputStreamCloseFailure.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/serialException/SerialPortParameterFailure.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/serialException/TooManyListeners.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/utils/JHex.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/utils/SerialTool.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/pdai/javafx/app/utils/TemperatureChart.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/images/computer.png" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>

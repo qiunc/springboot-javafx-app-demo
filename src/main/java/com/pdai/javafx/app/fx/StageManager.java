@@ -37,7 +37,7 @@ public class StageManager {
 		decorator.setTitle("DashboardFx");
 //		      decorator.setIcon(null);
 		decorator.addButton(ButtonType.FULL_EFFECT);
-		decorator.initTheme(GNDecorator.Theme.DEFAULT);
+		decorator.initTheme(GNDecorator.Theme.DARKULA);
 		decorator.getStage().setOnCloseRequest(event -> {
 			this.closeAllPopups();
 			Platform.exit();
@@ -45,7 +45,7 @@ public class StageManager {
 		decorator.getScene().getStylesheets().addAll(getClass().getResource("/styles/theme/fonts.css").toExternalForm(),
 				getClass().getResource("/styles/theme/material-color.css").toExternalForm(),
 				getClass().getResource("/styles/theme/skeleton.css").toExternalForm(),
-				getClass().getResource("/styles/theme/light.css").toExternalForm(),
+				getClass().getResource("/styles/theme/dark.css").toExternalForm(),
 				getClass().getResource("/styles/theme/bootstrap.css").toExternalForm(),
 				getClass().getResource("/styles/theme/shape.css").toExternalForm(),
 				getClass().getResource("/styles/theme/typographic.css").toExternalForm(),

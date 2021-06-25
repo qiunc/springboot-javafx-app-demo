@@ -15,6 +15,11 @@
 <?import javafx.collections.FXCollections?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Button?>
 <StackPane prefHeight="1500.0" prefWidth="992.0" xmlns="http://javafx.com/javafx/8.0.171" stylesheets="/css/mainview.css"
            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pdai.javafx.app.controller.SerialPortController">
     <children>
@@ -30,7 +35,7 @@
                         <VBox prefHeight="568.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
                             <children>
                                 <!--绘制曲线-->
-                                <SwingNode fx:id="swingNode">
+                                <SwingNode fx:id="swingNode" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
                                 </SwingNode>
                             </children>
                             <styleClass>
@@ -54,95 +59,96 @@
                                 <HBox prefHeight="468.0" prefWidth="547.0" spacing="20.0" VBox.vgrow="ALWAYS">
                                     <children>
 
-                                        <VBox  prefHeight="358.0" prefWidth="320.0" spacing="20.0" >
-                                            <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="320.0" spacing="20.0"
-                                                  style="-fx-background-color: #00A65A;">
-                                                <padding>
-                                                    <Insets left="20.0"/>
-                                                </padding>
-                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                                    <Image url="/images/add.png"/>
-                                                </ImageView>
-                                                <Label prefHeight="20.0" prefWidth="233.0"
-                                                       style="-fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 17px;"
-                                                       text="参数设置"/>
-                                            </HBox>
-                                            <!--<JFXTextField labelFloat="true" maxWidth="320.0" minWidth="320.0" prefHeight="39.0" prefWidth="320.0"
-                                                          promptText="Patient names"/> -->
+<!--                                        <VBox  prefHeight="358.0" prefWidth="320.0" spacing="20.0" >-->
+<!--                                            <HBox alignment="CENTER_LEFT" prefHeight="43.0" prefWidth="320.0" spacing="20.0"-->
+<!--                                                  style="-fx-background-color: #00A65A;">-->
+<!--                                                <padding>-->
+<!--                                                    <Insets left="20.0"/>-->
+<!--                                                </padding>-->
+<!--                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">-->
+<!--                                                    <Image url="/images/add.png"/>-->
+<!--                                                </ImageView>-->
+<!--                                                <Label prefHeight="20.0" prefWidth="233.0"-->
+<!--                                                       style="-fx-font-weight: bold; -fx-text-fill: white; -fx-font-size: 17px;"-->
+<!--                                                       text="参数设置"/>-->
+<!--                                            </HBox>-->
+<!--                                            &lt;!&ndash;<JFXTextField labelFloat="true" maxWidth="320.0" minWidth="320.0" prefHeight="39.0" prefWidth="320.0"-->
+<!--                                                          promptText="Patient names"/> &ndash;&gt;-->
 
-                                            <VBox prefHeight="58.0" prefWidth="270.0">
-                                                <padding>
-                                                    <Insets left="15.0" right="10.0"/>
-                                                </padding>
-                                                <Label style="-fx-text-fill: #AAAAAA;" text="选择串口"/>
-                                                <JFXComboBox fx:id="serialPortComboBox" prefHeight="30.0" prefWidth="295.0">
-                                                    <items>
-                                                        <FXCollections fx:factory="observableArrayList">
-                                                            <String fx:value="暂无数据"/>
+<!--                                            <VBox prefHeight="58.0" prefWidth="270.0">-->
+<!--                                                <padding>-->
+<!--                                                    <Insets left="15.0" right="10.0"/>-->
+<!--                                                </padding>-->
+<!--                                                <Label style="-fx-text-fill: #AAAAAA;" text="选择串口"/>-->
+<!--                                                <JFXComboBox fx:id="serialPortComboBox" prefHeight="30.0" prefWidth="295.0">-->
+<!--                                                    <items>-->
+<!--                                                        <FXCollections fx:factory="observableArrayList">-->
+<!--                                                            <String fx:value="暂无数据"/>-->
 
-                                                        </FXCollections>
-                                                    </items>
-                                                </JFXComboBox>
-                                            </VBox>
+<!--                                                        </FXCollections>-->
+<!--                                                    </items>-->
+<!--                                                </JFXComboBox>-->
+<!--                                            </VBox>-->
 
-                                            <VBox prefHeight="58.0" prefWidth="270.0">
-                                                <padding>
-                                                    <Insets left="15.0" right="10.0"/>
-                                                </padding>
-                                                <Label style="-fx-text-fill: #AAAAAA;" text="选择波特率"/>
-                                                <JFXComboBox fx:id="bpsComboBox" prefHeight="30.0" prefWidth="295.0">
-                                                    <items>
-                                                        <FXCollections fx:factory="observableArrayList">
-                                                            <String fx:value="2400"/>
-                                                            <String fx:value="4800"/>
-                                                            <String fx:value="9600"/>
-                                                        </FXCollections>
-                                                    </items>
-                                                </JFXComboBox>
-                                            </VBox>
+<!--                                            <VBox prefHeight="58.0" prefWidth="270.0">-->
+<!--                                                <padding>-->
+<!--                                                    <Insets left="15.0" right="10.0"/>-->
+<!--                                                </padding>-->
+<!--                                                <Label style="-fx-text-fill: #AAAAAA;" text="选择波特率"/>-->
+<!--                                                <JFXComboBox fx:id="bpsComboBox" prefHeight="30.0" prefWidth="295.0">-->
+<!--                                                    <items>-->
+<!--                                                        <FXCollections fx:factory="observableArrayList">-->
+<!--                                                            <String fx:value="2400"/>-->
+<!--                                                            <String fx:value="4800"/>-->
+<!--                                                            <String fx:value="9600"/>-->
+<!--                                                        </FXCollections>-->
+<!--                                                    </items>-->
+<!--                                                </JFXComboBox>-->
+<!--                                            </VBox>-->
 
-                                            <VBox layoutX="10.0" layoutY="97.0" prefHeight="58.0" prefWidth="270.0">
-                                                <padding>
-                                                    <Insets left="15.0"/>
-                                                </padding>
-                                                <Label style="-fx-text-fill: #AAAAAA;" text="Appointment Date"/>
-                                                <JFXDatePicker prefHeight="19.0" prefWidth="276.0"/>
-                                            </VBox>
+<!--                                            <VBox layoutX="10.0" layoutY="97.0" prefHeight="58.0" prefWidth="270.0">-->
+<!--                                                <padding>-->
+<!--                                                    <Insets left="15.0"/>-->
+<!--                                                </padding>-->
+<!--                                                <Label style="-fx-text-fill: #AAAAAA;" text="Appointment Date"/>-->
+<!--                                                <JFXDatePicker prefHeight="19.0" prefWidth="276.0"/>-->
+<!--                                            </VBox>-->
 
-                                            <HBox prefHeight="57.0" prefWidth="320.0" spacing="100">
-                                                <padding>
-                                                    <Insets left="15.0"/>
-                                                </padding>
-                                                <JFXButton fx:id="openButton" buttonType="RAISED" onAction="#openSerialPort" styleClass="blue-btn" text="打开串口"/>
-                                                <JFXButton fx:id="closeButton" buttonType="RAISED" onAction="#closeSerialPort" styleClass="cancel-button" text="关闭串口"/>
-                                            </HBox>
-                                                <styleClass>
-                                                    <String fx:value="border"/>
-                                                    <String fx:value="border-1"/>
-                                                </styleClass>
-                                        </VBox>
-
-
+<!--                                            <HBox prefHeight="57.0" prefWidth="320.0" spacing="100">-->
+<!--                                                <padding>-->
+<!--                                                    <Insets left="15.0"/>-->
+<!--                                                </padding>-->
+<!--                                                <JFXButton fx:id="openButton" buttonType="RAISED" onAction="#openSerialPort" styleClass="blue-btn" text="打开串口"/>-->
+<!--                                                <JFXButton fx:id="closeButton" buttonType="RAISED" onAction="#closeSerialPort" styleClass="cancel-button" text="关闭串口"/>-->
+<!--                                            </HBox>-->
+<!--                                                <styleClass>-->
+<!--                                                    <String fx:value="border"/>-->
+<!--                                                    <String fx:value="border-1"/>-->
+<!--                                                </styleClass>-->
+<!--                                        </VBox>-->
 
 
                                         <!--图主题--> <!--饼状图部分-->
-                                        <PieChart fx:id="pieChart" title="Pie Chart">
-                                            <styleClass>
-                                                <String fx:value="border"/>
-                                                <String fx:value="border-1"/>
-                                            </styleClass>
-                                            <padding>
-                                                <Insets bottom="5.0" left="5.0" top="5.0"/>
-                                            </padding>
-                                        </PieChart>
+<!--                                        <PieChart fx:id="pieChart" title="Pie Chart">-->
+<!--                                            <styleClass>-->
+<!--                                                <String fx:value="border"/>-->
+<!--                                                <String fx:value="border-1"/>-->
+<!--                                            </styleClass>-->
+<!--                                            <padding>-->
+<!--                                                <Insets bottom="5.0" left="5.0" top="5.0"/>-->
+<!--                                            </padding>-->
+<!--                                        </PieChart>-->
+
 
                                     </children>
                                 </HBox>
                                 <!--左中区域结束-->
                             </children>
                         </VBox>
+
                     </children>
                 </HBox>
+
 
             </children>
             <StackPane.margin>
@@ -154,7 +160,7 @@
     <stylesheets>
         <URL value="@/styles/theme/material-color.css"/>
         <URL value="@/styles/theme/skeleton.css"/>
-        <URL value="@/styles/theme/light.css"/>
+        <URL value="@/styles/theme/dark.css"/>
         <URL value="@/styles/theme/bootstrap.css"/>
         <URL value="@/styles/theme/shape.css"/>
         <URL value="@/styles/theme/typographic.css"/>
