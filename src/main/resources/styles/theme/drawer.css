@@ -1,7 +1,7 @@
 
 
 .drawer {
-  -fx-background-color : transparent;
+  -fx-background-color : #2c2b30;
 }
 
 .drawer .box-search
@@ -20,9 +20,9 @@
 
 .drawer .scroll .drawer-content .drawer-item
 {
-  -fx-background-radius : 0.0px;
-  -fx-background-color : transparent;
-  -fx-min-height : 50.0px;
+  -fx-background-radius : 100px;
+  -fx-background-color : #2c2b30;
+  -fx-min-height : 66px;
 }
 
 .drawer .scroll .drawer-content .drawer-menu .drawer-item
@@ -33,7 +33,7 @@
 .drawer .scroll .drawer-content .drawer-menu .title
 {
     -fx-background-radius : 0.0px;
-    -fx-background-color : transparent;
+    -fx-background-color : #2c2b30;
     -fx-pref-height : 50.0px;
     -fx-cursor : hand;
 }
@@ -78,7 +78,7 @@
 {
   -fx-border-color : -base;
   -fx-border-width : 0.0 0.0 1.0 0.0;
-  -fx-background-color : transparent;
+  -fx-background-color : #2c2b30;
 }
 
 .radio-drawer {

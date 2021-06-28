@@ -8,7 +8,7 @@ public class SerialPortParameterFailure extends Exception {
 
 	@Override
 	public String toString() {
-		return "设置串口参数失败！打开串口操作未完成！";
+		return "璁剧疆涓插彛鍙傛暟澶辫触锛佹墦寮�涓插彛鎿嶄綔鏈畬鎴愶紒";
 	}
 	
 }

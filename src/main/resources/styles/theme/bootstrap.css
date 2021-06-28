@@ -57,7 +57,7 @@
 .outlined, .outlined:hover, .btn-flat, .btn-flat:hover, .btn-transparent:focused,
 .btn-transparent, .btn-transparent:pressed, .btn-transparent:hover
 {
-  -fx-background-color : transparent;
+  -fx-background-color : #2c2b30;
 }
 
 .btn-flat:focused
@@ -147,6 +147,11 @@
   -fx-border-width : 1px;
 }
 
+.border-5 {
+    -fx-border-width: 20px;
+    -fx-border-color: #1e1e4e;
+}
+
 .border-2, .outlined{
   -fx-border-width : 1px;
 }
@@ -159,7 +164,7 @@
 
 
 .border-r-2 {
-    -fx-border-width : 0px 1px 0px 0px;
+    -fx-border-width : 0px 2px 0px 0px;
 }
 
 

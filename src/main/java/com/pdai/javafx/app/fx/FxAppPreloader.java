@@ -64,15 +64,15 @@ public class FxAppPreloader extends Preloader {
 			switch (type) {
 			case BEFORE_LOAD:
 				//label.textProperty().set("初始化成功...");
-				Thread.sleep(1000);
+				Thread.sleep(1);
 				break;
 			case BEFORE_INIT:
 				//label.textProperty().set("正在加载模块...");
-				Thread.sleep(500);
+				Thread.sleep(1);
 				break;
 			case BEFORE_START:
 				//label.textProperty().set("加载成功，即将跳转到主页面");
-				Thread.sleep(500);
+				Thread.sleep(1);
 				stage.close();
 			}
 		} catch (InterruptedException e) {

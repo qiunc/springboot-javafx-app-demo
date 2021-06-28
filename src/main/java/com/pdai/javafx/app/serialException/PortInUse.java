@@ -8,7 +8,7 @@ public class PortInUse extends Exception {
 
 	@Override
 	public String toString() {
-		return "¶Ë¿ÚÒÑ±»Õ¼ÓÃ£¡´ò¿ª´®¿Ú²Ù×÷Ê§°Ü£¡";
+		return "ç«¯å£å·²è¢«å ç”¨ï¼æ‰“å¼€ä¸²å£æ“ä½œå¤±è´¥ï¼";
 	}
 	
 }

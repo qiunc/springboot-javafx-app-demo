@@ -4,6 +4,7 @@ import static org.slf4j.LoggerFactory.getLogger;
 
 import java.util.Objects;
 
+import javafx.scene.layout.AnchorPane;
 import org.slf4j.Logger;
 
 import com.gn.decorator.GNDecorator;
@@ -34,7 +35,8 @@ public class StageManager {
 		this.decorator = decorator;
 		
 		// set decorator
-		decorator.setTitle("DashboardFx");
+		decorator.setTitle("");
+		decorator.getStage().setTitle("包埋机控制系统");
 //		      decorator.setIcon(null);
 		decorator.addButton(ButtonType.FULL_EFFECT);
 		decorator.initTheme(GNDecorator.Theme.DARKULA);
@@ -53,6 +55,7 @@ public class StageManager {
 				getClass().getResource("/styles/theme/master.css").toExternalForm());
 		decorator.setMaximized(true);
 		decorator.getStage().getIcons().add(new Image("/icons/logo2.png"));
+		decorator.setFullScreen(true);
 	}
 	
 	/**

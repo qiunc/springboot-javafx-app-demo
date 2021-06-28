@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.scene.input.MouseEvent;
 import org.controlsfx.control.PopOver;
 import org.springframework.stereotype.Component;
 
@@ -98,7 +99,8 @@ public class MainController extends BaseController implements Initializable {
 
 		populateItems();
 
-		// about();
+		 //about();
+		altLayout();
 
 		try {
 			addSubPop();
@@ -414,4 +416,9 @@ public class MainController extends BaseController implements Initializable {
 		}
 	}
 
+	public void systemSet(MouseEvent mouseEvent) {
+	}
+
+	public void help(MouseEvent mouseEvent) {
+	}
 }

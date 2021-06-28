@@ -16,19 +16,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane prefHeight="397.0" prefWidth="657.0" styleClass="foreground" stylesheets="@/styles/loader/loader.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane prefHeight="487.0" prefWidth="810.0" styleClass="foreground" stylesheets="@/styles/loader/loader.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
 
-      <AnchorPane prefHeight="576.0" prefWidth="481.0">
+      <AnchorPane prefHeight="487.0" prefWidth="810.0">
 
          <children>
-            <ImageView fitHeight="558.0" fitWidth="516.0" layoutX="462.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
+            <ImageView fitHeight="487" fitWidth="810.0" layoutX="462.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="0.0">
                <image>
-                  <Image url="@../../icons/predios-e-vetores-3fee7.jpg" />
+                  <Image url="@../../images/preloader.jpg" />
                </image>
-               <effect>
-                  <ColorAdjust brightness="0.05" contrast="0.06" hue="-0.02" saturation="0.31" />
-               </effect>
+<!--               <effect>-->
+<!--                  <ColorAdjust brightness="0.05" contrast="0.06" hue="-0.02" saturation="0.31" />-->
+<!--               </effect>-->
             </ImageView>
 
 <!--            <VBox alignment="BOTTOM_LEFT" layoutX="449.0" layoutY="188.0" prefHeight="576.0" prefWidth="462.0" styleClass="block" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">-->
@@ -51,7 +51,7 @@
 <!--               </font>-->
 <!--            </Label>-->
 
-            <Circle fill="#1f93ff00" layoutX="54.0" layoutY="56.0" radius="42.0" stroke="WHITE" strokeType="INSIDE" visible="false" />
+<!--            <Circle fill="#1f93ff00" layoutX="54.0" layoutY="56.0" radius="42.0" stroke="WHITE" strokeType="INSIDE" visible="false" />-->
 
 <!--            <Text fill="WHITE" layoutX="32.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="G" visible="false" wrappingWidth="44.7890625" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="10.0">-->
 <!--               <font>-->
@@ -64,9 +64,9 @@
 <!--            <JFXProgressBar fx:id="progressBar" layoutX="14.0" layoutY="382.0" prefHeight="4.0" prefWidth="401.0" progress="0.0" AnchorPane.bottomAnchor="36.0" />-->
 
          </children>
-         <effect>
-            <DropShadow color="#31b52f44" />
-         </effect>
+<!--         <effect>-->
+<!--            <DropShadow color="#31b52f44" />-->
+<!--         </effect>-->
       </AnchorPane>
 
    </children>

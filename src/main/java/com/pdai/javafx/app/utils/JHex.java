@@ -4,7 +4,7 @@ package com.pdai.javafx.app.utils;
 import java.math.BigInteger;
 
 /**
- * Ê®Áù½øÖÆÊı¾İ´¦Àí¹¤¾ßÀà
+ * åå…­è¿›åˆ¶æ•°æ®å¤„ç†å·¥å…·ç±»
  *
  */
 public class JHex {

@@ -36,19 +36,19 @@
 {
   -fx-padding : 0px;
   -fx-background-insets : 0px;
-  -fx-background-color : transparent;
+  -fx-background-color : #2c2b30;
 }
 
 .scroll-pane .viewport,
 .scroll-pane .corner
 {
   -fx-border-color : transparent;
-  -fx-background-color : transparent;
+  -fx-background-color : #2c2b30;
 }
 
 .scroll-pane
  {
-    -fx-background-color : transparent;
+    -fx-background-color : #2c2b30;
 }
 
 .scroll-bar .thumb,
@@ -65,7 +65,7 @@
 .scroll-bar > .increment-button,
 .scroll-bar > .decrement-button
 {
-    -fx-background-color: transparent;
+    -fx-background-color: #2c2b30;
     -fx-padding: 0;
     -fx-opacity : 0;
 }
@@ -73,19 +73,19 @@
 .scroll-bar:hover > .increment-button,
 .scroll-bar:hover > .decrement-button
 {
-     -fx-background-color: transparent;
+     -fx-background-color: #2c2b30;
      -fx-background-color : derive(-dark-gray, 30%);
 }
 
 .scroll-bar:pressed > .increment-button,
 .scroll-bar:pressed > .decrement-button
 {
-     -fx-background-color: transparent;
+     -fx-background-color: #2c2b30;
      -fx-background-color : -dark-gray;
 }
 
 .list-view:focused .virtual-flow .scroll-bar:vertical
 {
   /* -fx-background-color: red; */
-  -fx-border-color : transparent;
+  -fx-border-color : #2c2b30;
 }

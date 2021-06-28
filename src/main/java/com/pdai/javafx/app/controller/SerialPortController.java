@@ -12,13 +12,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.*;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 import org.springframework.stereotype.Component;
 
@@ -38,6 +43,8 @@ public class SerialPortController extends BaseController implements Initializabl
     public JFXButton openButton;
     @FXML
     public JFXButton closeButton;
+    @FXML
+    public VBox vBox;
 
     @FXML
     private AreaChart<String, Number> areaChart;
@@ -51,33 +58,6 @@ public class SerialPortController extends BaseController implements Initializabl
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         temperatureChart = new TemperatureChart("Temperature", "Speed", "Data Chart", "Temperature (℃)");
-//        swingNode.setContent(temperatureChart);
-//        swingNode.requestFocus();
-//        swingNode.autosize();
-//        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
-//                new PieChart.Data("Sun", Math.random()),
-//                new PieChart.Data("IBM", Math.random()),
-//                new PieChart.Data("HP", Math.random()),
-//                new PieChart.Data("Dell", Math.random()),
-//                new PieChart.Data("Apple", Math.random())
-//        );
-//        pieChart.setData(pieChartData);
-//        pieChart.setClockwise(false);
-
-//        XYChart.Series<String, Number> series = new XYChart.Series<>();
-//        series.setName("测试柱状图数据");
-//        series.getData().add(new XYChart.Data<>("0", 2D*Math.random()));
-//        series.getData().add(new XYChart.Data<>("1", 8D*Math.random()));
-//        series.getData().add(new XYChart.Data<>("2", 5D*Math.random()));
-//        series.getData().add(new XYChart.Data<>("3", 3D*Math.random()));
-//        series.getData().add(new XYChart.Data<>("4", 6D*Math.random()));
-//        series.getData().add(new XYChart.Data<>("5", 8D*Math.random()));
-//        series.getData().add(new XYChart.Data<>("6", 5D*Math.random()));
-//        series.getData().add(new XYChart.Data<>("7", 6D*Math.random()));
-//        series.getData().add(new XYChart.Data<>("8", 5D*Math.random()));
-//
-//        areaChart.getData().setAll(series);
-//        areaChart.setCreateSymbols(true);
     }
 
     public void closeSerialPort(ActionEvent actionEvent) {

@@ -8,7 +8,7 @@ public class TooManyListeners extends Exception {
 
 	@Override
 	public String toString() {
-		return "´®¿Ú¼àÌıÀàÊıÁ¿¹ı¶à£¡Ìí¼Ó²Ù×÷Ê§°Ü£¡";
+		return "ä¸²å£ç›‘å¬ç±»æ•°é‡è¿‡å¤šï¼æ·»åŠ æ“ä½œå¤±è´¥ï¼";
 	}
 	
 }
